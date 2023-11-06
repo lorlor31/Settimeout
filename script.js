@@ -8,20 +8,21 @@ let c=1
 let i=1
 let clic=document.getElementById("clic")
 let parag=document.getElementById("parag")
-clic.addEventListener("click",()=>{clearTimeout(id);console.log("stop")})
-let arr=["Ana","Bob","Carl","Dave","Eric","Fanny","Greg"]
+clic.addEventListener("click",()=>{clearTimeout(id);console.log("stop",id)})
+let arr=["Ana","Bob","Carl","Dave","Eric","Greg","Fanny"]
 let id
 function log(name){
-    setTimeout(()=>{
+    // setTimeout(()=>{
     parag.textContent=""
-    console.log(name,c) ;
+    console.log(name,c,"id=",id) ;
     let text=document.createTextNode(`Bonjour ${name} ! `)
     parag.appendChild(text) ;
-    c++},
+    c++}
+//     ,
 
-    1000)
-}
+//     1000)
+// }
 arr.forEach((name,index)=>{
-    setTimeout(()=>log(name,index),1000*index)
+    id=setTimeout(()=>log(name,index),1000*index)
 })
 
